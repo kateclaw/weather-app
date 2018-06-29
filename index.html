@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather App</title>
+        <!-- stylesheet link -->
+        <link rel="stylesheet" href="style.css">
+        <!-- font link -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100" rel="stylesheet">
+        <!-- jquery link -->
+
+    </head>
+    <body>
+        <div id="app">
+            <h1>Weather App</h1>
+            <div class="main-app">
+                <!-- <h3>Input city name:</h3> -->
+                <form class="city-form">
+                    <input type="text" class="city-input" placeholder = "enter city name">
+                    <button type="submit" class="get-weather-button">></button>
+                </form>
+                <div class="loader"></div>
+                <!-- shows city's temp -->
+                <div class="city-weather"></div>
+                
+            </div>
+        </div>
+        
+        <!-- js link -->
+        <script src="app.js"></script>
+        <!-- jquery link -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+
+    </body>
+</html>
