@@ -15,22 +15,97 @@
         <div id="app">
             <h1>Weather App</h1>
             <div class="main-app">
-                <!-- <h3>Input city name:</h3> -->
                 <form class="city-form">
-                    <input type="text" class="city-input" placeholder = "enter city name">
+                    <input type="text" class="city-input" placeholder = "Enter city name">
                     <button type="submit" class="get-weather-button">></button>
                 </form>
                 <div class="loader"></div>
-                <!-- shows city's temp -->
-                <div class="city-weather"></div>
                 
+                <div class="holder">
+                    <div>
+                        <h2 class = "city-name"></h2>
+                    </div>
+                    <div class="weather-icon">
+                        <!-- icon goes here -->
+                        <canvas id="icon" width="80" height="80"></canvas>
+                    </div>
+    
+                    <div class="city-weather"></div>
+
+                    <!-- five day weather button -->
+                    <button type="button" class="get-fiveday-button">Five Day Forecast</button>
+
+                </div>
+
+                <h3 id="fiveday-title" style="margin-left:100px"><!-- FIVE DAY when five day is requested --> </h3>
+
+                <!-- filled when the five day forecast is requested -->
+                <div class="container">
+				<div class="five-day">
+                        <span id="day-one" class="weather-panel">
+                            <div class="weather-icon">
+                                <!-- this is where the icon goes -->
+                                <canvas id="icon1" width="100" height="100"></canvas>
+                            </div>
+    
+                            <div id="day-one-weather" class="weather-info">
+                                <!-- filled by js -->
+                            </div>
+                        </span>
+                        <span id="day-two" class="weather-panel">
+                            <div class="weather-icon">
+                                <!-- this is where the icon goes -->
+                                <canvas id="icon2" width="100" height="100"></canvas>
+                            </div>
+    
+                            <div id="day-two-weather" class="weather-info">
+                                <!-- filled by js -->
+                            </div>
+                        </span>
+                        <span id="day-three class="weather-panel"">
+                            <div class="weather-icon">
+                                <!-- this is where the icon goes -->
+                                <canvas id="icon3" width="100" height="100"></canvas>
+                            </div>
+    
+                            <div id="day-three-weather" class="weather-info">
+                                <!-- filled by js -->
+                            </div>
+                        </span>
+                        <span id="day-four" class="weather-panel">
+                            <div class="weather-icon">
+                                <!-- this is where the icon goes -->
+                                <canvas id="icon4" width="100" height="100"></canvas>
+                            </div>
+    
+                            <div id="day-four-weather" class="weather-info">
+                                <!-- filled by js -->
+                            </div>
+                        </span>
+                        <span id="day-five" class="weather-panel">
+                            <div class="weather-icon">
+                                <!-- this is where the icon goes -->
+                                <canvas id="icon5" width="100" height="100"></canvas>
+                            </div>
+    
+                            <div id="day-five-weather" class="weather-info">
+                                <!-- filled by js -->
+                            </div>
+                        </span>
+                    </div>
+                    </div>
+
             </div>
         </div>
         
-        <!-- js link -->
+        <!-- autocomplete link -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVkKVnAdskF8rxpQrrfQelVYdfdzGVmmU&libraries=places"></script>
+        
+        <!-- js links -->
         <script src="app.js"></script>
+        <script src="skycons.js"></script>
+
         <!-- jquery link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-
     </body>
 </html>

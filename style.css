@@ -1,6 +1,4 @@
-
 /* font link */
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans); */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100);
 
 * {
@@ -18,37 +16,154 @@ h1 {
 
 .city-form {
     text-align: center;
+    padding: 10px;
 }
 
 .city-input {
     background-color: #e9ece5;
     border: 1px solid #b3c2bf;
+    min-height: 20px;
+    min-width: 200px;
 }
 
 .get-weather-button {
     background-color: #e9ece5;
     border: 1px solid #b3c2bf;
+    height: 25px;
 }
 
+.get-fiveday-button {
+    background-color: #e9ece5;
+    border: 1px solid #b3c2bf;
+    height: 25px;
+    display: none;
+    margin-top: 20px;
+}
+
+
 div.city-weather {
-    /* font-size: 3em; */
-    /* border: 1px solid black; */
-    /* text-align: center; */
-    /* padding: 20px; */
-    margin-top: 50px;
-    margin-bottom: 120px;
-    /* margin-left: 4em; */
-    /* display: inline-block; */
+    /* padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    /* position: relative; */
+    width: 50%;
+    display: flex; */
+    margin-left: 10px;
+    /* width: 500px;
+    border: 1px solid black;
+    overflow: hidden;  */
+}
+
+
+/* div.weather-icon {
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
     display: flex;
-}
+} */
 
 #loader {
     text-align: center;
     display: hidden;
     width: 100%;
     left: 500px;
+}
+
+div .holder {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+}
+
+/* PRINTED TEXT FORMATTING */
+#wind {
+    overflow: hidden; 
+    max-height: 40px;
+    height: 100%;
+    margin-left: 130px;
+}
+
+#wind-text {
+    float:left;
+}
+
+#wind-num {
+    float: left; 
+    margin-left: 5px;
+}
+
+#humidity {
+    overflow: hidden; 
+    max-height: 40px;
+    height: 100%;
+    margin-left: 130px;
+}
+
+#humidity-text {
+    float:left;
+}
+
+#humidity-num {
+    float: left; 
+    margin-left: 5px;
+}
+
+#UV {
+    overflow: hidden; 
+    max-height: 40px;
+    height: 100%;
+    margin-left: 130px;
+}
+
+#UV-text {
+    float:left;
+}
+
+#UV-num {
+    float: left; 
+    margin-left: 5px;
+}
+
+#summary {
+    overflow: hidden; 
+    max-height: 40px;
+    height: 100%;
+    margin-left: 130px;
+}
+
+#summary-text {
+    float:left;
+}
+
+#summary-num {
+    float: left; 
+    margin-left: 5px;
+}
+
+/* FIVE DAY FORMATTING */
+.weather-info{
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.five-day {
+    margin: 0 auto;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weather-panel {
+    display: inline-block;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    margin-top: 30px;
+    display: block;
 }
