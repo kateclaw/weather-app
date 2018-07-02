@@ -122,6 +122,8 @@ cityForm.addEventListener('submit', function(event){
     $('.city-name').hide();
     $('.get-fiveday-button').hide();
     $('.container').hide();
+    $('#fiveday-title').hide();
+
 
 
     // current weather
@@ -135,7 +137,8 @@ cityForm.addEventListener('submit', function(event){
         $('.weather-icon').show();
         $('.city-name').show();
         $('.get-fiveday-button').show();
-        $('.container').show();
+        // $('.container').show();
+        // $('#fiveday-title').show();
 
 
         //display city name
@@ -164,73 +167,76 @@ cityForm.addEventListener('submit', function(event){
 
 
 var currentDay = app.querySelector('#day-one');
-	var title = app.querySelector('#fiveday-title');
+var title = app.querySelector('#fiveday-title');
 
-	//handle five day forecast request
-	fiveDay.addEventListener('click', function() {
+//handle five day forecast request
+fiveDay.addEventListener('click', function() {
 
-        var city = cityInput.value;
-        $('<p class="loader" style="text-align:center;">loading...</p>').insertAfter('.holder'); // appends gif to "app" div
+    var city = cityInput.value;
+    $('<p class="loader" style="text-align:center;">loading...</p>').insertAfter('.holder'); // appends gif to "app" div
         
+    $('.container').hide();
+    $('#fiveday-title').hide();
 
-		getCoordinatesForCity(city)
-		.then(getFiveDay)
-		.then(function(weather) {
-            $('.loader').remove(); // removes loader once ajax has completed
+    getCoordinatesForCity(city)
+	.then(getFiveDay)
+	.then(function(weather) {
+        $('.loader').remove(); // removes loader once ajax has completed
 
-			title.innerText = 'FIVE DAY FORECAST \n';
+        $('.container').show();
+        $('#fiveday-title').show();
 
-			var daysIcon = "icon1";
-			var daysInfo = app.querySelector('#day-one-weather');
+		title.innerText = 'FIVE DAY FORECAST \n';
 
-			for(var i = 0; i < 5; i++) {
-				//set variables and display for appropriate day
-				switch (i) {
-					case 0:
-						break;
-					case 1:
-						currentDay = app.querySelector('#day-two');
-						daysIcon = "icon2";
-						daysInfo = app.querySelector('#day-two-weather');
-						break;
-					case 2:
-						currentDay = app.querySelector('#day-three');
-						daysIcon = "icon3";
-						daysInfo = app.querySelector('#day-three-weather');
-						break;
-					case 3:
-						currentDay = app.querySelector('#day-four');
-						daysIcon = "icon4";
-						daysInfo = app.querySelector('#day-four-weather');
-						break;
-					case 4:
-						currentDay = app.querySelector('#day-five');
-						daysIcon = "icon5";
-						daysInfo = app.querySelector('#day-five-weather');
-						break;
-					default:
-						//shouldn't get here ever
-						title.innerText = 'ERROR';
-				}
+		var daysIcon = "icon1";
+		var daysInfo = app.querySelector('#day-one-weather');
 
-				daysInfo.innerHTML = `<p class="text" style="font-size: .8em">High: ${weather.data[i].temperatureMax} \xB0F</p>`
-									+ `<p class="text" style="font-size: .8em">Low: ${weather.data[i].temperatureMin} \xB0F</p>`
-									+ `<p class="text" style="font-size: .8em">Wind speed: ${weather.data[i].windSpeed}</p>`
-                                    + `<p class="text" style="font-size: .8em">UV index: ${weather.data[i].uvIndex}</p>`
-									+ `<p class="text" style="font-size: .8em">${weather.data[i].summary}</p>`                              
-
-				//set icon
-				setWeatherIcon(daysIcon, weather.data[i].icon);
-
+		for(var i = 0; i < 5; i++) {
+			switch (i) {
+				case 0:
+					break;
+				case 1:
+					currentDay = app.querySelector('#day-two');
+					daysIcon = "icon2";
+					daysInfo = app.querySelector('#day-two-weather');
+					break;
+				case 2:
+					currentDay = app.querySelector('#day-three');
+					daysIcon = "icon3";
+					daysInfo = app.querySelector('#day-three-weather');
+					break;
+				case 3:
+					currentDay = app.querySelector('#day-four');
+					daysIcon = "icon4";
+					daysInfo = app.querySelector('#day-four-weather');
+					break;
+				case 4:
+					currentDay = app.querySelector('#day-five');
+					daysIcon = "icon5";
+					daysInfo = app.querySelector('#day-five-weather');
+					break;
+				default:
+					title.innerText = 'ERROR';
 			}
+
+			daysInfo.innerHTML = `<p class="text" style="font-size: .8em">High: ${weather.data[i].temperatureMax} \xB0F</p>`
+								+ `<p class="text" style="font-size: .8em">Low: ${weather.data[i].temperatureMin} \xB0F</p>`
+								+ `<p class="text" style="font-size: .8em">Wind speed: ${weather.data[i].windSpeed}</p>`
+                                + `<p class="text" style="font-size: .8em">UV index: ${weather.data[i].uvIndex}</p>`
+								+ `<p class="text" style="font-size: .8em; word-wrap: break-word; width:150px;">${weather.data[i].summary}</p>`                              
+
+			//set icon
+			setWeatherIcon(daysIcon, weather.data[i].icon);
+
+		}
 
 			// //display city name
 			// getCityName(city)
 			// .then(function(displayCity) {
 			// 	cityName.innerText = displayCity;
 			// });
-		});
-	});
+    });
+});
 
 
 })(); //IIFE

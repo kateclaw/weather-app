@@ -77,6 +77,10 @@ div .holder {
     text-align: center;
 }
 
+footer {
+    padding: 30px;
+}
+
 /* PRINTED TEXT FORMATTING */
 #wind {
     overflow: hidden; 
@@ -161,9 +165,7 @@ div .holder {
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-    margin-top: 30px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
