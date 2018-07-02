@@ -162,6 +162,7 @@ footer {
 
 .weather-panel {
     display: inline-block;
+    padding: 20px;
 }
 
 .container {

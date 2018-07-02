@@ -229,12 +229,6 @@ fiveDay.addEventListener('click', function() {
 			setWeatherIcon(daysIcon, weather.data[i].icon);
 
 		}
-
-			// //display city name
-			// getCityName(city)
-			// .then(function(displayCity) {
-			// 	cityName.innerText = displayCity;
-			// });
     });
 });
 
